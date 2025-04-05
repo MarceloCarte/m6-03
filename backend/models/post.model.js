@@ -14,11 +14,20 @@ export const dbPostPost = async (titulo, img, descripcion) => {
   return res.rows;
 };
 
-// export const dbLikePost = async (id) => {
-//   const values = [id];
-//   const res = await pool.query(
-//     "UPDATE posts SET like = like + 1 WHERE id = $1 RETURNING 'likes';",
-//     values
-//   );
-//   return res.rows[0];
-// };
+export const dbLikePost = async (id) => {
+  const values = [id];
+  const res = await pool.query(
+    "UPDATE posts SET like = like + 1 WHERE id = $1;",
+    values
+  );
+  return res.rows[0];
+};
+
+export const dbDeletePost = async (id) => {
+  const value = [id]
+  const res = await pool.query("DELETE FROM posts WHERE id = $1;",
+    value
+  )
+  return res.rows[0]
+  
+}
