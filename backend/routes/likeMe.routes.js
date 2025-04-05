@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getPosts, postPost } from "../middleware/req.middleware.js";
+import { getPosts, postPost } from "../controllers/post.controller.js";
 const router = Router();
 
 router.get("/posts", getPosts);

@@ -1,4 +1,4 @@
-import { dbGetPosts, dbPostPost } from "../controllers/consulta.js";
+import { dbGetPosts, dbPostPost } from "../models/post.model.js";
 
 export const getPosts = async (req, res) => {
   const data = await dbGetPosts();
@@ -16,3 +16,5 @@ export const postPost = async (req, res) => {
 //   const like = await dbLikePost(id);
 //   res.status(200).json({ message: "You like this post", like });
 // };
+
+// export const deletePost = (req, res) => res.send('deletePost')
